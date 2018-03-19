@@ -9,7 +9,7 @@ class Movies extends React.Component {
     }
 
     ComponentDidMount() {
-        fetch(`http://www.omdbapi.com/`)
+        fetch(`https://www.omdbapi.com/?apikey=48586023&s`)
             .then((response) => response.json()
             )
             .then((data) => {
