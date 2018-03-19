@@ -1,4 +1,6 @@
 import React from 'react'
+import MoviesList from "./MoviesList";
+import MoviesSearch from "./MoviesSearch";
 
 class Movies extends React.Component {
 
@@ -20,6 +22,8 @@ class Movies extends React.Component {
         return (
             <div>
                 <p>movie</p>
+                <MoviesSearch/>
+                <MoviesList/>
             </div>
         )
     }
