@@ -8,21 +8,22 @@ class Movies extends React.Component {
         data: []
     }
 
-    ComponentDidMount() {
-        fetch(`https://www.omdbapi.com/?apikey=48586023&s`)
-            .then((response) => response.json()
-            )
-            .then((data) => {
-                console.log(data)
-            })
+    componentDidMount() {
+        fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=f3798525`)
+            .then(
+                response => response.json()
+            ).then(
+            data => this.setState({data})
+        )
     }
 
     render() {
-
+        const {data} = this.state
         return (
             <div>
+                {data.Title}
                 <p>movie</p>
-                <MoviesSearch/>
+                <MoviesSearch data={data}/>
                 <MoviesList/>
             </div>
         )
