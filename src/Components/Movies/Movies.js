@@ -21,10 +21,8 @@ class Movies extends React.Component {
         const {data} = this.state
         return (
             <div>
-                {data.Title}
-                <p>movie</p>
                 <MoviesSearch data={data}/>
-                <MoviesList/>
+                <MoviesList data={data}/>
             </div>
         )
     }
