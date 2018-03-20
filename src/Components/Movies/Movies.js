@@ -1,6 +1,5 @@
 import React from 'react'
 import MoviesList from "./MoviesList";
-import MoviesSearch from "./MoviesSearch";
 
 class Movies extends React.Component {
 
@@ -9,7 +8,7 @@ class Movies extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=f3798525`)
+        fetch(`http://www.omdbapi.com/?apikey=f3798525=${searchValue}`)
             .then(
                 response => response.json()
             ).then(
@@ -21,7 +20,6 @@ class Movies extends React.Component {
         const {data} = this.state
         return (
             <div>
-                <MoviesSearch data={data}/>
                 <MoviesList data={data}/>
             </div>
         )
