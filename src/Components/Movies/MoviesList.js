@@ -17,8 +17,8 @@ class MoviesList extends React.Component {
         return (
             <div>
                 <MoviesSearch
-                    // searchPhrase={this.state.currentSearchPhrase}
-                    // onChange={this.handleSearchPhraseChange}
+                    searchPhrase={this.state.currentSearchPhrase}
+                    onChange={this.handleSearchPhraseChange}
                 />
 
             </div>

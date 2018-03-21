@@ -4,11 +4,12 @@ import MoviesList from "./MoviesList";
 class Movies extends React.Component {
 
     state = {
-        data: []
+        data: [],
+        searchValue: ''
     }
 
     componentDidMount() {
-        fetch(`http://www.omdbapi.com/?apikey=f3798525=${searchValue}`)
+        fetch(`http://www.omdbapi.com/?apikey=f3798525`)
             .then(
                 response => response.json()
             ).then(

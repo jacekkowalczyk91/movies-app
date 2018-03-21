@@ -14,7 +14,15 @@ class MoviesSearch extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        this.props.data.Title.includes(this.state.inputValue)
+
+        fetch(`http://www.omdbapi.com/?apikey=f3798525=${this.state.inputValue}`)
+            .then(r => r.json())
+            .then((data) => {
+                this.setState({
+                    movies: data.Search,
+                    totalResults: data.totalResults
+                });
+            })
     }
 
     render() {
