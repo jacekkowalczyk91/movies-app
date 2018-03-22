@@ -1,6 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import movies from './state/movies'
+import movies, {getMovies} from './state/movies'
 
 const reducers = combineReducers({
     movies
@@ -13,3 +13,4 @@ export const store = createStore(
     composeEnhancers(applyMiddleware(thunk))
 )
 
+store.dispatch(getMovies('batman'))

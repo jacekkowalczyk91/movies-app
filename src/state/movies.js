@@ -11,7 +11,7 @@ export const getMovies = SearchInput => dispatch => {
             response => response.json()
         ).then(
         data => {
-            dispatch(setMovies(data))
+            dispatch(setMovies(data.Search))
         }
     )
 }

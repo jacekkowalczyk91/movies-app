@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {getMovies} from "../../state/movies";
 
 class MoviesSearch extends React.Component {
 
@@ -6,45 +8,37 @@ class MoviesSearch extends React.Component {
         inputValue: ''
     }
 
-    handleInputChange = event => {
+    handleInputValueChange = event => {
         this.setState({
             inputValue: event.target.value
         })
     }
 
-    handleSubmit = event => {
+    handleSubmitForm = event => {
         event.preventDefault()
-
-        fetch(`http://www.omdbapi.com/?apikey=f3798525=${this.state.inputValue}`)
-            .then(r => r.json())
-            .then((data) => {
-                this.setState({
-                    movies: data.Search,
-                    totalResults: data.totalResults
-                });
-            })
+        this.props.getMovies(this.state.inputValue)
     }
 
     render() {
         return (
-            <div>
-                <form
-                    onSubmit={this.handleSubmit}
-                >
-                    <input
-                        type="text"
-                        placeholder="enter movie here ..."
-                        value={this.state.inputValue}
-                        onChange={this.handleInputChange}
-                    />
-                    <input
-                        type="submit"
-                        value="Search"
-                    />
-                </form>
-            </div>
+            <form
+                onSubmit={this.handleSubmitForm}
+            >
+                <input
+                    type="text"
+                    value={this.state.inputValue}
+                    onChange={this.handleInputValueChange}
+                />
+                <input
+                    type="submit"
+                />
+            </form>
         )
     }
 }
 
-export default MoviesSearch
+const mapDispatchToProps = dispatch => ({
+    getMovies : inputValue => dispatch(getMovies(inputValue))
+})
+
+export default connect(null, mapDispatchToProps)(MoviesSearch)
