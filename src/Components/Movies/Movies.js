@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 
 class Movies extends React.Component {
@@ -11,7 +13,10 @@ class Movies extends React.Component {
                 {
                     this.props.moviesData && this.props.moviesData.map((movie, index) => (
                         <div key={index}>
-                            <h1>{movie.Title}</h1>
+                            <h5>{movie.Title}</h5>
+                            <Link to={`/movie/${movie.imdbID}`}>
+                                <button>More</button>
+                            </Link>
                         </div>
                     ))
                 }

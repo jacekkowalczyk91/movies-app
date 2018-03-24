@@ -1,1 +1,1 @@
-export {default} from './SingleMovie'
+export { default } from './SingleMovie'

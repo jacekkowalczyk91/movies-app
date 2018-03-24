@@ -1,6 +1,6 @@
 import React from 'react'
-import connect from 'react-redux'
-import getSingleMovie from '../../state/movies'
+import {connect} from 'react-redux'
+import {getSingleMovie} from '../../state/movies'
 
 class SingleMovie extends React.Component {
 
@@ -8,27 +8,23 @@ class SingleMovie extends React.Component {
         this.props.getSingleMovie(this.props.match.params.id)
     }
 
-    render()
-    const singleMovie = this.props.singleMovieData
-
-
-{
-        return(
+    render() {
+        return (
             <div>
-                <h1>{this.singleMovieData.Title} <span>({this.singleMovieData.Year})</span></h1>
+                <h1>{this.props.singleMovieData.Title} <span>({this.props.singleMovieData.Year})</span></h1>
                 <div>
                     <div>
-                        <img src={this.singleMovieData.Poster} alt={this.singleMovieData.Title}/>
+                        <img src={this.props.singleMovieData.Poster} alt={this.props.singleMovieData.Title}/>
                     </div>
                     <div>
-                        <time>{this.singleMovieData.Runtime}</time>
-                        <p>{this.singleMovieData.Genre}</p>
-                        <p>{this.singleMovieData.Plot}</p>
-                        <p>Actors: {this.singleMovieData.Actors}</p>
-                        <p>Director: {this.singleMovieData.Director}</p>
-                        <p>Writer: {this.singleMovieData.Writer}</p>
-                        <p>Released: {this.singleMovieData.Released}</p>
-                        <p>Boxoffice: {this.singleMovieData.BoxOffice}</p>
+                        <time>{this.props.singleMovieData.Runtime}</time>
+                        <p>{this.props.singleMovieData.Genre}</p>
+                        <p>{this.props.singleMovieData.Plot}</p>
+                        <p>Actors: {this.props.singleMovieData.Actors}</p>
+                        <p>Director: {this.props.singleMovieData.Director}</p>
+                        <p>Writer: {this.props.singleMovieData.Writer}</p>
+                        <p>Released: {this.props.singleMovieData.Released}</p>
+                        <p>Boxoffice: {this.props.singleMovieData.BoxOffice}</p>
                     </div>
                 </div>
             </div>
@@ -37,7 +33,10 @@ class SingleMovie extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    singleMovieData : state.movies.singleMovieData
+    singleMovieData: state.movies.singleMovieData
+})
+const mapDispatchToProps = dispatch => ({
+    getSingleMovie: movieId => dispatch(getSingleMovie(movieId))
 })
 
-export default connect(mapStateToProps)(SingleMovie)
+export default connect(mapStateToProps, mapDispatchToProps)(SingleMovie)

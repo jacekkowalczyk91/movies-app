@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Movies from './Components/Movies'
+import MoviesSearch from "./Components/Movies/MoviesSearch";
+import SingleMovie from "./Components/SingleMovie/SingleMovie";
 
 
 class App extends Component {
@@ -13,6 +15,8 @@ class App extends Component {
                 <Router>
                     <div>
                         <Route exact path="/" component={Movies}/>
+                        <Route exact path="/" component={MoviesSearch}/>
+                        <Route path="/movie/:id" component={SingleMovie}/>
                     </div>
                 </Router>
             </Provider>
