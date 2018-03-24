@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {getMovies} from "../../state/movies";
+import './MoviesSearch.css'
 
 class MoviesSearch extends React.Component {
 

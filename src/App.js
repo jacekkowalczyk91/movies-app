@@ -14,8 +14,8 @@ class App extends Component {
             <Provider store={store}>
                 <Router>
                     <div>
-                        <Route exact path="/" component={Movies}/>
                         <Route exact path="/" component={MoviesSearch}/>
+                        <Route exact path="/" component={Movies}/>
                         <Route path="/movie/:id" component={SingleMovie}/>
                     </div>
                 </Router>
