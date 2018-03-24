@@ -1,3 +1,5 @@
 movies-app
 
-app purpose is searching movies by name, rate and type
+app purpose is searching movies by name
+
+searching by rate and type soon
