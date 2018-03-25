@@ -1,0 +1,12 @@
+.single-movie-view {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-shadow: 1px 1px black;
+}
+.single-movie-view > div {
+    display: flex;
+    justify-content: space-around;
+}
+.single-movie-view > div div:first-child {
+    margin-right: 5%;
+}

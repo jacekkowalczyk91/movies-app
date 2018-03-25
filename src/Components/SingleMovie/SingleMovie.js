@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getSingleMovie} from '../../state/movies'
+import './SingleMovie.css'
 
 class SingleMovie extends React.Component {
 
@@ -10,7 +11,7 @@ class SingleMovie extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='single-movie-view'>
                 <h1>{this.props.singleMovieData.Title} <span>({this.props.singleMovieData.Year})</span></h1>
                 <div>
                     <div>
