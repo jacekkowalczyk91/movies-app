@@ -1,0 +1,26 @@
+.movies-view {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+}
+.movie {
+    border: solid #00c6ff 2px;
+    border-radius: 15px;
+    padding: 0 1%;
+    width: 20%;
+    margin: 2% 0;
+}
+.movie img {
+    max-width: 100%;
+    max-height: 70%;
+}
+.movies-view button {
+    border:none;
+    border-radius: 10px;
+    background: aqua;
+    margin: 1% auto 0;
+    display: block;
+    font-size: 20px;
+}
+
