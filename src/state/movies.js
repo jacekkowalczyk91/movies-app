@@ -3,7 +3,7 @@ const SET_SINGLE_MOVIE = 'movies/SET_SINGLE_MOVIE'
 
 const setMovies = moviesData => ({
     type: SET_MOVIES,
-        moviesData
+    moviesData
 })
 const setSingleMovie = singleMovieData => ({
     type: SET_SINGLE_MOVIE,
@@ -31,11 +31,11 @@ export const getMovies = SearchInput => dispatch => {
 
 const initialState = {
     moviesData: [],
-    singleMovieData : ''
+    singleMovieData: ''
 }
 
 export default (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case SET_MOVIES:
             return {
                 ...state,

@@ -5,7 +5,7 @@
     justify-content: space-around;
 }
 .movie {
-    border: solid #00c6ff 2px;
+    border: solid tomato 2px;
     border-radius: 15px;
     padding: 0 1%;
     width: 20%;
@@ -18,9 +18,10 @@
 .movies-view button {
     border:none;
     border-radius: 10px;
-    background: aqua;
-    margin: 1% auto 0;
+    background: tomato;
+    margin: 5% auto 0;
     display: block;
     font-size: 20px;
+    text-decoration: none;
 }
 

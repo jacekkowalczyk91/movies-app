@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getSingleMovie} from '../../state/movies'
 import './SingleMovie.css'
+import {Link} from 'react-router-dom'
 
 class SingleMovie extends React.Component {
 
@@ -27,6 +28,11 @@ class SingleMovie extends React.Component {
                         <p>Released: {this.props.singleMovieData.Released}</p>
                         <p>Boxoffice: {this.props.singleMovieData.BoxOffice}</p>
                     </div>
+                    <Link to="/" style={{textDecoration: 'none'}}>
+                        <button type="button">
+                            Back
+                        </button>
+                    </Link>
                 </div>
             </div>
         )

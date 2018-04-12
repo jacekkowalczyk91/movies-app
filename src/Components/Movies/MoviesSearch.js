@@ -26,12 +26,15 @@ class MoviesSearch extends React.Component {
                 onSubmit={this.handleSubmitForm}
             >
                 <input
+                    className='inputSearch'
+                    placeholder='Movie name...'
                     type="text"
                     value={this.state.inputValue}
                     onChange={this.handleInputValueChange}
                 />
                 <input
                     type="submit"
+                    value='Search'
                 />
             </form>
         )
