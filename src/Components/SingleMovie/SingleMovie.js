@@ -15,10 +15,10 @@ class SingleMovie extends React.Component {
             <div className='single-movie-view'>
                 <h1>{this.props.singleMovieData.Title} <span>({this.props.singleMovieData.Year})</span></h1>
                 <div>
-                    <div>
+                    <div className='image-poster'>
                         <img src={this.props.singleMovieData.Poster} alt={this.props.singleMovieData.Title}/>
                     </div>
-                    <div>
+                    <div className='description'>
                         <time>{this.props.singleMovieData.Runtime}</time>
                         <p>{this.props.singleMovieData.Genre}</p>
                         <p>{this.props.singleMovieData.Plot}</p>
@@ -28,11 +28,14 @@ class SingleMovie extends React.Component {
                         <p>Released: {this.props.singleMovieData.Released}</p>
                         <p>Boxoffice: {this.props.singleMovieData.BoxOffice}</p>
                     </div>
-                    <Link to="/" style={{textDecoration: 'none'}}>
-                        <button type="button">
-                            Back
-                        </button>
-                    </Link>
+                    <div className='btn-single-view'>
+                        <Link to="/" style={{textDecoration: 'none'}}>
+                            <button type="button">
+                                Back
+                            </button>
+                        </Link>
+                    </div>
+
                 </div>
             </div>
         )
