@@ -1,5 +1,5 @@
 movies-app
-
+movies-app-7fec0.firebaseapp.com
 react + redux + omdbAPI
 
 app purpose is searching movies by name
